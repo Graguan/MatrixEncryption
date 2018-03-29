@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -12,9 +11,9 @@ void getKey(void) {
 	while (1) {
 		for (int i = 1; i <= 9; i++) {
 			x = rand() % 10000 + 1;
-			key[(i % 3) + 1][(i + 2) / 3] = x;
+			key[(i % 3) ][(i) / 3] = x;
 		}
-		if ((key[1][1] * key[2][2] * key[3][3]) + key[1][2] * key[2][3] * key[3][1] + key[1][3] * key[2][1] * key[3][2] - key[3][1] * key[2][2] * key[1][3] - (key[3][2] * key[2][3] * key[1][1]) - (key[3][3] * key[2][1] * key[1][2]) != 0) {
+		if ((key[0][0] * key[1][1] * key[2][2]) + key[0][1] * key[1][2] * key[2][0] + key[0][2] * key[1][0] * key[2][1] - key[2][0] * key[1][1] * key[0][2] - (key[2][1] * key[1][2] * key[0][0]) - (key[2][2] * key[1][0] * key[0][1]) != 0) {
 			break;
 		}
 	}
