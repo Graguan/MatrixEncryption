@@ -9,7 +9,7 @@ void getKey(void) {
 	srand(time(0));
 	int x;
 	while (1) {
-		for (int i = 1; i <= 9; i++) {
+		for (int i = 0; i < 9; i++) {
 			x = rand() % 10000 + 1;
 			key[(i % 3) ][(i) / 3] = x;
 		}
