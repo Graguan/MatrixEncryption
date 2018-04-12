@@ -4,7 +4,7 @@
 #include <iostream>
 //Steven
 using namespace std;
-int message[200][3];
+int message[280][3];
 void convToASCII(string letter)
 {
 	for (int i = 0; i < letter.length(); i++)
