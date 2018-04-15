@@ -13,10 +13,6 @@ void unEncrypt(int A[280][3], long double B[3][3]) {
 			for (k = 0; k < 3; k++)
 				total += A[i][k] * B[k][j];
 			unencrypted[i][j] = round(total);
-			/*cout << total << ' ';
-			++count;
-			if (count % 3 == 0)
-			cout << endl;*/
 			total = 0;
 		}
 	}
