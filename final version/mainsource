@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <Windows.h>
+#include "encrypt.h"
+#include "decrypt.h"
+#include "animations.h";
+using namespace std;
+int main() {
+	//Parth, Ankt, Steven
+	string choice;
+	int length;
+	animations();
+	createdby();
+	while (1) {
+		system("CLS");
+		setcolor("Would you like to encrypt or decrypt?", 10);
+		cin >> choice;
+		if (choice == "encrypt" or choice == "e" or choice == "E") {
+			system("CLS");
+			length = encrypt();
+			cout << endl;
+			system("CLS");
+			setcolor("Your message is ", 3);
+			cout << length;
+			cout << " characters long." << endl << endl;
+			setcolor("Your key is:", 3);
+			Sleep(1500);
+			for (int i = 0; i < 3; i++) {
+				for (int j = 0; j < 3; j++)
+					cout << key[i][j] << " ";
+				cout << endl;
+			}
+			cout << endl;
+			setcolor("Your encrypted message is:", 3);
+			Sleep(1500);
+			if (length % 3 == 0) {
+				for (int i = 0; i < length / 3; i++) {
+					for (int j = 0; j < 3; j++)
+						cout << encrypted[i][j] << " ";
+					cout << endl;
+				}
+			}
+			else {
+				for (int i = 0; i < length / 3 + 1; i++) {
+					for (int j = 0; j < 3; j++)
+						cout << encrypted[i][j] << " ";
+					cout << endl;
+				}
+			}
+			cout << endl << endl;
+			setcolor("All of this information is also stored in encrypted.txt under file directory:", 3);
+			setcolor("C:\\Users\\parth\\source\\repos\\Project1\\Project1\\encrypted.txt\n", 3);
+			system("pause");
+		}
+		else if (choice == "decrypt" or choice == "d" or choice == "D") {
+			system("CLS");
+			setcolor("The decryption program will read the encrypted code and key from ecrypted.txt.", 7);
+			cout << endl;
+			Sleep(1000);
+			decrypt();
+			system("pause");
+		}
+		else if (choice == "exit program" or choice == "Exit Program" or choice == "Exit program" or choice == "EXIT PROGRAM") {
+			exit(4);
+		}
+		else {
+			cout << "That was not one of choices. Please learn how to read." << endl;
+			Sleep(8000);
+		}
+	}
+}
+
