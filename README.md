@@ -8,3 +8,5 @@ v1.0 Fixed with no UI
 v1.1 Basic UI
 
 v1.2 File IO
+
+v1.3 Animation
